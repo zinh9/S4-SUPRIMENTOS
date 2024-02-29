@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAGINA INICIAL</title>
+</head>
+
+<body>
+  <h1>Pagina de Cadastro</h1>
+  <form action="{{ url_for('cadastro')}}" , method="POST">
+    <table>
+      <tr>
+        <td>Nome</td>
+        <td><input type="text" name="nome"></td>
+      </tr>
+      <tr>
+        <td>Descrição</td>
+        <td><input type="text" name="descricao"></td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td><input type="number" name="valor"></td>
+      </tr><br>
+      <input type="submit" value="Adicionar">
+    </table>
+  </form>
+  <a href="/index">Voltar</a>
+</body>
+
+</html>

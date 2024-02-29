@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAGINA INICIAL</title>
+</head>
+
+<body>
+  <h1>Atualizar Produto</h1>
+  <form action="" , method="POST">
+    <table>
+      <tr>
+        <td>Nome</td>
+        <td><input type="text" name="nome" value="{{ produto.nome }}"></td>
+      </tr>
+      <tr>
+        <td>Descrição</td>
+        <td><input type="text" name="descricao" value="{{ produto.descricao }}"></td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td><input type="number" name="valor" value="{{ produto.valor }}"></td>
+      </tr><br>
+      <input type="submit" value="Atualizar Dados">
+    </table>
+  </form>
+  <a href="/index">Voltar</a>
+</body>
+
+</html>

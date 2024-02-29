@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4 SUPRIMENTOS</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #ececec;
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .separator {
+            border-bottom: 1px solid rgb(60, 60, 60);
+            /* Reduzindo a espessura da linha */
+            box-shadow: 0 2px 4px rgb(37, 37, 37);
+            /* Ajustando o tamanho da sombra */
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            width: 315px;
+            height: 300px;
+            border-radius: 20px;
+            /* Bordas arredondadas */
+            border: 2px solid #ff6b00;
+            /* Cor do stroke */
+            background-color: #d7d7d7;
+            /* Cor do fundo */
+            flex-direction: column;
+            /* Organiza os itens em coluna */
+            box-shadow: inset 0 0 10px rgb(180, 180, 180);
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            height: 55px;
+            margin-top: 50px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            background-color: #ff6b00;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="templates/Logo-s4-_1_.jpg">
+    </div>
+    <div class="separator"></div>
+    <div class="content-wrapper">
+        <div class="content">
+            <a href="{{ url_for('cadastro_usuario') }}" class="button">Cadastrar</a>
+            <a href="{{ url_for('logar') }}" class="button">Entrar</a>
+        </div>
+    </div>
+</body>
+
+</html>
