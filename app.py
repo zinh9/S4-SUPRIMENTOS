@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, jsonify, Blueprint
-from routes.models import db
-from flask_login import login_required
+from models import db
+from flask_login import LoginManager, login_user, login_required
 
-from routes.usuario_cadastro import usuario_cadastro_routes
-from routes.usuario_login import usuario_login_routes
-from routes.produto_cadastro import cadastrar_routes
-from routes.produto_listar import listar_routes
-from routes.produto_atualizar import atualizar_routes
-from routes.produto_excluir import excluir_routes
+from usuario_cadastro import usuario_cadastro_routes
+from usuario_login import usuario_login_routes
+from produto_cadastro import cadastrar_routes
+from produto_listar import listar_routes
+from produto_atualizar import atualizar_routes
+from produto_excluir import excluir_routes
 
 app = Flask(__name__)
 
@@ -21,6 +21,13 @@ app.register_blueprint(excluir_routes)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:1234@localhost/S4_Suprimentos'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 's4_suprimentos'
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(idUsuario):
+    return Usuario.query.get(int(idUsuario))
 
 @app.route('/')
 def redirecionar_para_index():

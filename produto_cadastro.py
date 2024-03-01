@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from routes.models import db, Produto
+from models import db, Produto
 
 cadastrar_routes = Blueprint('cadastrar_routes', __name__)
 

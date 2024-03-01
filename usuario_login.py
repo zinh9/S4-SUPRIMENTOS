@@ -1,11 +1,7 @@
-from flask import Blueprint, render_template, request, redirect, url_for
-from routes.models import db, Usuario
-from flask_login import LoginManager, login_user, login_required
+from flask import Blueprint, render_template, request, redirect, url_for, flash
+from models import db, Usuario
 
-usuario_login_routes = Blueprint('usuario_login', __name__)
-
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+usuario_login_routes = Blueprint('usuario_login_routes', __name__)
 
 @usuario_login_routes.route("/login", methods=['GET', 'POST'])
 def logar():
@@ -26,7 +22,3 @@ def logar():
             flash('Por favor, preencha todos os campos.', 'error')
 
     return render_template("login.html")
-
-@login_manager.user_loader
-def load_user(idUsuario):
-    return Usuario.query.get(int(idUsuario))

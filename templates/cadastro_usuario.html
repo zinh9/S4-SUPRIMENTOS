@@ -77,7 +77,7 @@
     </div>
     <div class="separator"></div>
     <div class="content-wrapper">Cadastrar Usuário
-        <form action="{{ url_for('cadastro_usuario')}}" method="POST">
+        <form action="{{ url_for('usuario_cadastro.cadastro_usuario')}}" method="POST">
             <p>
                 <tr>
                     <td><input type="email" name="email" placeholder="Email: s4_supply@exemplo.com" autocomplete="off">
@@ -89,7 +89,7 @@
                     <td><input type="password" name="senha" placeholder="Senha:" autocomplete="off"></td>
                 </tr>
             </p>
-            <input type="button" type="submit" value="Cadastrar">
+            <input type="submit" value="Cadastrar">
         </form>
     </div>
 
