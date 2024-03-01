@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from models import Usuario
-from app import db
+from routes.models import db, Usuario
 
 @app.route("/cadastro-usuario", methods=['GET', 'POST'])
 def cadastro_usuario():

@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, jsonify, Blueprint
-from flask_sqlalchemy import SQLAlchemy
+from routes.models import db
 
-
-from produto_cadastro import cadastrar_routes
-from produto_listar import listar_routes
-from produto_atualizar import atualizar_routes
-from produto_excluir import excluir_routes
+from routes.produto_cadastro import cadastrar_routes
+from routes.produto_listar import listar_routes
+from routes.produto_atualizar import atualizar_routes
+from routes.produto_excluir import excluir_routes
 
 app = Flask(__name__)
 
@@ -17,8 +16,6 @@ app.register_blueprint(excluir_routes)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:1234@localhost/S4_Suprimentos'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 's4_suprimentos'
-
-db = SQLAlchemy(app)
 
 @app.route('/')
 def redirecionar_para_index():
@@ -33,4 +30,5 @@ def index():
     return render_template("index.html")
 
 if __name__ == '__main__':
+    db.init_app(app=app)
     app.run(host='localhost', debug=True)

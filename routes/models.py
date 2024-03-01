@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.types import DECIMAL
-from app import db
+
+db = SQLAlchemy()
 
 class Usuario(db.Model):
     __tablename__ = 'usuario'

@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
-from models import Produto
-from app import db
+from routes.models import db, Produto
 
 excluir_routes = Blueprint('excluir_routes', __name__)
 

@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from models import Usuario
-from app import db
+from routes.models import db, Usuario
 
 @app.route("/login", methods=['GET', 'POST'])
 def logar():

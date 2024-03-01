@@ -67,6 +67,7 @@
             cursor: pointer;
             text-align: center;
         }
+
     </style>
 </head>
 
@@ -77,14 +78,17 @@
     <div class="separator"></div>
     <div class="content-wrapper">Cadastrar Usuário
         <form action="{{ url_for('cadastro_usuario')}}" method="POST">
-            <tr>
-                <td>Email</td>
-                <td><input type="email" name="email"></td>
-            </tr><br>
-            <tr>
-                <td>Senha</td>
-                <td><input type="password" name="senha"></td>
-            </tr><br>
+            <p>
+                <tr>
+                    <td><input type="email" name="email" placeholder="Email: s4_supply@exemplo.com" autocomplete="off">
+                    </td>
+                </tr>
+            </p>
+            <p>
+                <tr>
+                    <td><input type="password" name="senha" placeholder="Senha:" autocomplete="off"></td>
+                </tr>
+            </p>
             <input type="button" type="submit" value="Cadastrar">
         </form>
     </div>

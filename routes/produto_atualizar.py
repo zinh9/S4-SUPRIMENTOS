@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from models.models import Produto
-from app import db
+from routes.models import db, Produto
 
 atualizar_routes = Blueprint('atualizar_routes', __name__)
 
