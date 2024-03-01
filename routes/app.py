@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, jsonify, Blueprint
 from routes.models import db
+from flask_login import login_required
 
+from routes.usuario_cadastro import usuario_cadastro_routes
+from routes.usuario_login import usuario_login_routes
 from routes.produto_cadastro import cadastrar_routes
 from routes.produto_listar import listar_routes
 from routes.produto_atualizar import atualizar_routes
@@ -8,6 +11,8 @@ from routes.produto_excluir import excluir_routes
 
 app = Flask(__name__)
 
+app.register_blueprint(usuario_cadastro_routes)
+app.register_blueprint(usuario_login_routes)
 app.register_blueprint(cadastrar_routes)
 app.register_blueprint(listar_routes)
 app.register_blueprint(atualizar_routes)
@@ -19,13 +24,14 @@ app.config['SECRET_KEY'] = 's4_suprimentos'
 
 @app.route('/')
 def redirecionar_para_index():
-    return redirect(url_for('index'))
+    return redirect(url_for('pagina_cadastro_login'))
 
 @app.route("/s4_suprimentos_cadastro_login")
 def pagina_cadastro_login():
     return render_template("pagina_login_cadastro.html")
 
 @app.route("/index")
+@login_required
 def index():
     return render_template("index.html")
 

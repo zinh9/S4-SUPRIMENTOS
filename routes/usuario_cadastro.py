@@ -1,7 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from routes.models import db, Usuario
 
-@app.route("/cadastro-usuario", methods=['GET', 'POST'])
+usuario_cadastro_routes = Blueprint('usuario_cadastro', __name__)
+
+@usuario_cadastro_routes.route("/cadastro-usuario", methods=['GET', 'POST'])
 def cadastro_usuario():
     if request.method == 'POST':
         email = request.form.get("email")
