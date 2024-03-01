@@ -26,8 +26,8 @@
       <td>{{ produto.nome }}</td>
       <td>{{ produto.descricao }}</td>
       <td>{{ produto.valor }}</td>
-      <td><a href="/excluir/{{ produto.idProduto }}">X</a></td>
-      <td><a href="/atualizar/{{ produto.idProduto }}">Atualizar</a></td>
+      <td><a href="{{ url_for('excluir_routes.excluir', idProduto=produto.idProduto) }}">X</a></td>
+      <td><a href="{{ url_for('atualizar_routes.atualizar', idProduto=produto.idProduto) }}">Atualizar</a></td>
     </tr>
 
     {% endfor %}

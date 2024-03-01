@@ -76,16 +76,16 @@
     </div>
     <div class="separator"></div>
     <div class="content-wrapper">Entrar
-        <form action="{{ url_for('logar')}}" type="text" value="email" method="POST">
+        <form action="{{ url_for('logar')}}" method="POST">
             <tr>
                 <td>Email</td>
-                <td><input type="text" name="email"></td>
+                <td><input type="email" name="email"></td>
             </tr><br>
             <tr>
                 <td>Senha</td>
-                <td><input type="text" name="senha"></td>
+                <td><input type="password" name="senha"></td>
             </tr><br>
-            <input type="submit" value="Entrar">
+            <input type="button" type="submit" value="Entrar">
         </form>
     </div>
 

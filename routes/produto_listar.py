@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from models import Produto
+from app import db
 
 listar_routes = Blueprint('listar_routes', __name__)
 
