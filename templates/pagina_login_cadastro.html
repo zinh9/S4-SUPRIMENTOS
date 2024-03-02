@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S4 SUPRIMENTOS</title>
+
     <style>
         body {
             background-color: #ffffff;
@@ -16,7 +17,7 @@
         .header {
             background-color: #ececec;
             text-align: center;
-            padding: 25px 0;
+            padding: 15px 0;
         }
 
         .header img {
@@ -31,7 +32,7 @@
             /* Ajustando o tamanho da sombra */
         }
 
-        .content-wrapper {
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -42,21 +43,19 @@
             width: 315px;
             height: 300px;
             border-radius: 20px;
-            /* Bordas arredondadas */
-            border: 2px solid #ff6b00;
-            /* Cor do stroke */
+            border: 1px solid #ff6b00;
             background-color: #d7d7d7;
-            /* Cor do fundo */
             flex-direction: column;
-            /* Organiza os itens em coluna */
             box-shadow: inset 0 0 10px rgb(180, 180, 180);
         }
 
         .button {
+            text-decoration: none;
             display: flex;
             justify-content: center;
-            width: 200px;
-            height: 55px;
+            align-items: center;
+            width: 150px;
+            height: 30px;
             margin-top: 50px;
             padding: 10px 20px;
             border-radius: 30px;
@@ -66,16 +65,20 @@
             font-size: 16px;
             cursor: pointer;
             text-align: center;
+            box-shadow: inset 0 0 5px rgb(60, 60, 60);
+            font-family: madefor-display, 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
+
     </style>
 </head>
 
 <body>
     <div class="header">
-        <img src="templates/Logo-s4-_1_.jpg">
+        <img
+            src="https://static.wixstatic.com/media/b6c7e5_b6d43044bb344d83bb6a97a6875ea924~mv2.png/v1/crop/x_26,y_122,w_400,h_196/fill/w_112,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Nova%20Logo%20-%20s4.png">
     </div>
     <div class="separator"></div>
-    <div class="content-wrapper">
+    <div class="container">
         <div class="content">
             <a href="{{ url_for('usuario_cadastro.cadastro_usuario')}}" class="button">Cadastrar</a>
             <a href="{{ url_for('usuario_login_routes.logar') }}" class="button">Entrar</a>

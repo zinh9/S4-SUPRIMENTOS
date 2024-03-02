@@ -6,4 +6,4 @@ listar_routes = Blueprint('listar_routes', __name__)
 @listar_routes.route("/produto/listar")
 def lista():
     produtos = Produto.query.all()
-    return render_template("lista.html", produtos=produtos)
+    return render_template("index.html", produtos=produtos)

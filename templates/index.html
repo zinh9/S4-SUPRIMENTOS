@@ -1,14 +1,162 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PÁGINA INICIAL</title>
-  </head>
-  <body>
-    <h1>Cadastro de Produtos</h1>
-    <hr>
-    <a href="{{ url_for('cadastrar_routes.cadastrar')}}">Cadastrar Produto</a>
-    <a href="{{ url_for('listar_routes.lista')}}">Lista de Produtos</a>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S4 SUPRIMENTOS</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: #ececec;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .separator {
+      border-bottom: 1px solid rgb(60, 60, 60);
+      /* Reduzindo a espessura da linha */
+      box-shadow: 0 2px 4px rgb(37, 37, 37);
+      /* Ajustando o tamanho da sombra */
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      width: 1015px;
+      height: auto;
+      border-radius: 20px;
+      border: 1px solid #ff6b00;
+      background-color: #d7d7d7;
+      flex-direction: column;
+      box-shadow: inset 0 0 10px rgb(180, 180, 180);
+      font-family: madefor-display, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .container-produtos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      width: 1015px;
+      height: auto;
+      border-radius: 20px;
+      border: 1px solid #ff6b00;
+      background-color: #d7d7d7;
+      flex-direction: column;
+      box-shadow: inset 0 0 10px rgb(180, 180, 180);
+      font-family: madefor-display, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .button {
+      font-family: madefor-display, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff6b00;
+      text-decoration: none;
+      background-color: #ff6b00;
+      width: 110px;
+      height: 40px;
+      border-radius: 20px;
+      box-shadow: inset 0 0 5px rgb(80, 80, 80);
+    }
+
+    .button::before {
+      content: "+";
+      font-size: 40px;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-right: 10px;
+      line-height: 35px;
+      text-align: center;
+      box-shadow: inset 0 0 5px rgb(80, 80, 80);
+    }
+
+    .button-lista {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 30px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      border-color: #ff6b00;
+      box-shadow: inset 0 0 5px rgb(60, 60, 60);
+      background-color: #ff6b00;
+    }
+
+    .tabela, th, td {
+      border-collapse: collapse;
+      /*define a separação entre as bordar*/
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <img
+      src="https://static.wixstatic.com/media/b6c7e5_b6d43044bb344d83bb6a97a6875ea924~mv2.png/v1/crop/x_26,y_122,w_400,h_196/fill/w_112,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Nova%20Logo%20-%20s4.png">
+  </div>
+  <div class="separator"></div>
+  <div class="container">
+    <a class="button" href="{{ url_for('cadastrar_routes.cadastrar')}}"></a>
+    <a class="button-lista" href="{{ url_for('listar_routes.lista')}}">Produtos</a>
+  </div>
+  <div class="container-produtos">
+    <h1>Lista de Produtos</h1>
+    <table border="1" class="tabela">
+      <tr>
+        <td>ID</td>
+        <td>Produto</td>
+        <td>Descrição</td>
+        <td>Valor</td>
+        <td>Excluir</td>
+        <td>Atualizar</td>
+      </tr>
+
+      {% for produto in produtos %}
+
+      <tr>
+        <td>{{ produto.idProduto}}</td>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.descricao }}</td>
+        <td>{{ produto.valor }}</td>
+        <td><a href="{{ url_for('excluir_routes.excluir', idProduto=produto.idProduto) }}">X</a></td>
+        <td><a href="{{ url_for('atualizar_routes.atualizar', idProduto=produto.idProduto) }}">Atualizar</a></td>
+      </tr>
+
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
 </html>

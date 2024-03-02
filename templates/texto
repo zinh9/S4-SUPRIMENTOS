@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PÁGINA INICIAL</title>
+  </head>
+  <body>
+    <h1>Cadastro de Produtos</h1>
+    <hr>
+    <a href="{{ url_for('cadastrar_routes.cadastrar')}}">Cadastrar Produto</a>
+    <a href="{{ url_for('listar_routes.lista')}}">Lista de Produtos</a>
+  </body>
+</html>

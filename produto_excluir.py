@@ -13,4 +13,4 @@ def excluir(idProduto):
 
     produtos = Produto.query.all()
 
-    return render_template("lista.html", produtos = produtos)
+    return render_template("index.html", produtos = produtos)

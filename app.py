@@ -38,7 +38,6 @@ def pagina_cadastro_login():
     return render_template("pagina_login_cadastro.html")
 
 @app.route("/index")
-@login_required
 def index():
     return render_template("index.html")
 
