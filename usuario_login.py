@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from models import db, Usuario
-from flask_login import login_user
 
 usuario_login_routes = Blueprint('usuario_login_routes', __name__)
 
@@ -14,7 +13,6 @@ def logar():
             usuario = Usuario.query.filter_by(email=email).first()
 
             if usuario and usuario.senha == senha:
-                #login_user(usuario.idUsuario)
                 return redirect(url_for("index"))
             
             else:
