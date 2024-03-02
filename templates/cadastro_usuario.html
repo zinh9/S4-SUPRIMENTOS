@@ -7,7 +7,7 @@
     <title>S4 SUPRIMENTOS</title>
     <style>
         body {
-            background-color: #ffffff;
+            background: linear-gradient(to right, #ffffff, #ff6b00);
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -26,9 +26,7 @@
 
         .separator {
             border-bottom: 1px solid rgb(60, 60, 60);
-            /* Reduzindo a espessura da linha */
             box-shadow: 0 2px 4px rgb(37, 37, 37);
-            /* Ajustando o tamanho da sombra */
         }
 
         .container {
@@ -41,11 +39,7 @@
             padding: 20px;
             width: 315px;
             height: 300px;
-            border-radius: 20px;
-            border: 1px solid #ff6b00;
-            background-color: #d7d7d7;
-            flex-direction: column;
-            box-shadow: inset 0 0 10px rgb(180, 180, 180);
+            flex-direction: column;;
         }
 
         .button {
@@ -79,7 +73,13 @@
             border-color: #ff6b00;
         }
 
-        form{
+        .button-submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
             justify-content: center;
             align-items: center;
         }
@@ -96,7 +96,7 @@
         <form action="{{ url_for('usuario_cadastro.cadastro_usuario')}}" method="post">
             <div><input type="email" name="email" autocomplete="off" placeholder="Email: supply_s4@exemplo.com"></div>
             <div><input type="password" name="senha" autocomplete="off" placeholder="Senha:"></div>
-            <div><input type="submit" value="Cadastrar"></div>
+            <div class="button-submit"><input type="submit" value="Cadastrar"></div>
         </form>
     </div>
 </body>

@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, url_for, redirect, flash, jsonify, Blueprint
-from models import db
+from models import db, Usuario, Produto
 from flask_login import LoginManager, login_user, login_required
 
 from usuario_cadastro import usuario_cadastro_routes
 from usuario_login import usuario_login_routes
 from produto_cadastro import cadastrar_routes
-from produto_listar import listar_routes
 from produto_atualizar import atualizar_routes
 from produto_excluir import excluir_routes
 
@@ -14,7 +13,6 @@ app = Flask(__name__)
 app.register_blueprint(usuario_cadastro_routes)
 app.register_blueprint(usuario_login_routes)
 app.register_blueprint(cadastrar_routes)
-app.register_blueprint(listar_routes)
 app.register_blueprint(atualizar_routes)
 app.register_blueprint(excluir_routes)
 
@@ -23,11 +21,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 's4_suprimentos'
 
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(idUsuario):
-    return Usuario.query.get(int(idUsuario))
+    return Usuario.query.get(idUsuario)
 
 @app.route('/')
 def redirecionar_para_index():
@@ -39,7 +37,8 @@ def pagina_cadastro_login():
 
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    produtos = Produto.query.all()
+    return render_template("index.html", produtos=produtos)
 
 if __name__ == '__main__':
     db.init_app(app=app)

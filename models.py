@@ -14,6 +14,7 @@ class Usuario(db.Model):
         self.email = email
         self.senha = senha
 
+
 class Produto(db.Model):
     __tablename__ = 'produto'
 

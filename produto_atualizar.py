@@ -19,6 +19,6 @@ def atualizar(idProduto):
 
             db.session.commit()
 
-            return redirect(url_for("listar_routes.lista"))
+            return redirect(url_for("index"))
     
     return render_template("atualizar.html", produto=produto)
