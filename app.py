@@ -1,7 +1,7 @@
 """
 Este arquivo contém a configuração e definição das rotas principais de uma aplicação web Flask,
 juntamente com a importação de modelos de banco de dados e blueprints relacionados ao cadastro
-de usuários, login, e operações CRUD de produtos.
+de usuários, login, e operações CRUD de produtos, incluindo o READ da função CRUD na página principal.
 """
 
 from flask import Flask, render_template, request, url_for, redirect, Blueprint # Importa as classes e funções necessárias do Flask
@@ -40,7 +40,7 @@ def redirecionar_para_index():
 def pagina_cadastro_login():
     return render_template("pagina_login_cadastro.html")
 
-# Rota para a página inicial com a função READ
+# Rota para a página inicial, com a função READ e DELETE para uma página só
 @app.route("/index")
 def index():
     produtos = Produto.query.all()

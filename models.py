@@ -1,3 +1,5 @@
+# Arquivo onde tem as funções principais de modelos de usuário e produto, e banco de dados
+
 from flask_sqlalchemy import SQLAlchemy # Importa a classe SQLAlchemy do Flask SQLAlchemy
 from sqlalchemy.types import DECIMAL # Importa o tipo DECIMAL do SQLAlchemy
 

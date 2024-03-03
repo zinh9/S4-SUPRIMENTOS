@@ -1,0 +1,16 @@
+CREATE DATABASE s4_suprimentos;
+
+USE s4_suprimentos;
+
+CREATE TABLE Produto(
+    idProduto INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(50) NOT NULL,
+    Descricao VARCHAR(500) NOT NULL,
+    Valor DECIMAL(10,2)
+);
+
+CREATE TABLE Usuario(
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    Email VARCHAR(80) NOT NULL UNIQUE,
+    Senha VARCHAR(20) NOT NULL
+);

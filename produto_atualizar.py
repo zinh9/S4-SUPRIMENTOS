@@ -1,3 +1,5 @@
+# Arquivo para atualizar as informações de um produto. UPDATE da função CRUD
+
 from flask import Blueprint, render_template, request, redirect, url_for # Importa o Blueprint e outras classes e funções necessárias do Flask
 from models import db, Produto # Importa o objeto do banco de dados e os modelos de produto definidos em models.py
 
@@ -31,4 +33,4 @@ def atualizar(idProduto):
             return redirect(url_for("index"))
     
     # Renderiza o template de atualização com os dados do produto
-    return render_template("atualizar.html", produto=produto)
+    return render_template("atualizar_produto.html", produto=produto)

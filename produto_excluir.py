@@ -1,10 +1,12 @@
+# Arquivo para excluir um produto. DELETE da função CRUD
+
 from flask import Blueprint, render_template, redirect, url_for
 from models import db, Produto
 
 # Blueprint para as rotas de exclusão de produtos
 excluir_routes = Blueprint('excluir_routes', __name__)
 
-# Rota para excluir um produto pelo ID
+# Rota para excluir um produto pelo ID 
 @excluir_routes.route("/excluir/<int:idProduto>")
 def excluir(idProduto):
     # Procura o produto pelo ID no banco de dados
@@ -18,4 +20,5 @@ def excluir(idProduto):
     # Recupera todos os produtos após a exclusão
     produtos = Produto.query.all()
 
+    # Renderiza a página inicial com a lista atualizada de produtos
     return render_template("index.html", produtos = produtos)

@@ -9,7 +9,6 @@
       body {
         background: linear-gradient(to right, #ffffff, #ff6b00);
         margin: 0;
-        padding: 0;
         font-family: Arial, sans-serif;
       }
 
@@ -37,6 +36,7 @@
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
+      box-shadow: inset 0 0 5px rgb(56, 56, 56);
     }
 
     .separator {
@@ -46,7 +46,6 @@
     
     .container {
       display: flex;
-      justify-content: center;
       align-items: center;
       margin-top: 60px;
       margin-left: auto;
@@ -55,7 +54,6 @@
       width: 1015px;
       height: auto;
       border-radius: 20px;
-      border: 1px solid #ff6b00;
       background-color: #ffffff;
       flex-direction: column;
       box-shadow: inset 0 0 10px rgb(180, 180, 180);
@@ -63,7 +61,6 @@
     }
 
     .button-create {
-      font-family: madefor-display, 'Helvetica Neue', Helvetica, Arial, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -102,7 +99,6 @@
 
     .button-icon {
       color: #000;
-      text-decoration: none;
       font-size: 25px;
     }
     
@@ -116,7 +112,7 @@
   </div>
   <div class="separator"></div>
   <div class="container">
-    <a class="button-create" href="{{ url_for('cadastrar_routes.cadastrar')}}"></a>
+    <a class="button-create" href="{{ url_for('cadastrar_routes.cadastrar_produto')}}"></a>
     <table border="1" class="tabela">
       <tr>
         <td>ID</td>

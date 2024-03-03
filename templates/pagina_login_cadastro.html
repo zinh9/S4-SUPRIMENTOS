@@ -10,8 +10,6 @@
         body {
             background: linear-gradient(to right, #ffffff, #ff6b00);
             margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
         }
 
         .header {
@@ -40,7 +38,6 @@
             margin-left: auto;
             margin-right: auto;
             padding: 20px;
-            width: 315px;
             height: 300px;
             border-radius: 20px;
         }
@@ -71,7 +68,7 @@
     </div>
     <div class="separator"></div>
     <div class="container">
-        <div class="content">
+        <div>
             <a href="{{ url_for('usuario_cadastro.cadastro_usuario')}}">Cadastrar</a>
             <a href="{{ url_for('usuario_login_routes.logar') }}">Entrar</a>
         </div>
