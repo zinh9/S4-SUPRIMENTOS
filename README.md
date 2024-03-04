@@ -8,7 +8,8 @@ Para configurar e executar esta aplicação, siga as instruções abaixo:
 
 ### Pré-requisitos
 
-Certifique-se de ter instalado o Python 3 e o pip em seu ambiente de desenvolvimento.
+- Certifique-se de ter instalado o Python 3 e o pip em seu ambiente de desenvolvimento.
+- Ter o banco de dados MySQL para ser conectado pelo SQLAlchemy para que a aplicação possa interagir com os dados armazenados.
 
 ### Instalação de Dependências
 
@@ -32,7 +33,7 @@ Edite o arquivo `app.py` para configurar a URI do banco de dados SQLAlchemy e a 
 
 ## Execução da Aplicação
 
-Após configurar o banco de dados e a aplicação, você pode executar a aplicação Flask. No terminal, execute o seguinte comando:
+Após configurar o banco de dados e a aplicação, você pode executar a aplicação Flask. No terminal, execute o seguinte comando: `py app.py`
 
 Isso iniciará o servidor Flask. Você poderá acessar a aplicação em `http://localhost:5000/`.
 
@@ -51,3 +52,22 @@ A estrutura do projeto é organizada da seguinte maneira:
 - **Blueprints**: As rotas relacionadas a usuários e produtos foram agrupadas em blueprints separados para melhor organização e modularidade do código.
 - **Modelos de Dados**: Foram criados modelos de dados separados para usuários e produtos, permitindo uma estrutura mais flexível e escalável para o banco de dados.
 
+## Padrão MVC
+
+1. Model: As definições de modelos de dados para usuários e produtos estão localizadas no arquivo models.py. Esses modelos representam a   camada de modelo no padrão MVC, responsável por lidar com a lógica de negócios e a manipulação de dados.
+
+2. View: Os templates HTML para renderização das páginas estão armazenados na pasta templates/. Esses arquivos representam a camada de visualização no padrão MVC, responsável por apresentar os dados aos usuários.
+
+3. Controller: As rotas e a lógica de negócios relacionadas a usuários e produtos estão definidas nos arquivos usuario_cadastro.py, usuario_login.py, produto_cadastro.py, produto_atualizar.py e produto_excluir.py. Esses arquivos representam a camada de controle no padrão MVC, responsável por receber solicitações do usuário, processar essas solicitações e fornecer uma resposta adequada.
+
+## Padrões de API RESTful
+
+1. Recursos Claros e Identificáveis: Os recursos dentro da aplicação, como usuários e produtos, são claramente definidos nos modelos Usuario e Produto, respectivamente. Cada recurso é identificado de forma única e possui atributos que o caracterizam.
+
+2. Métodos HTTP Semânticos: Os métodos HTTP são utilizados de acordo com as operações CRUD (Create, Read, Update, Delete) nos recursos.
+
+3. Uso de URIs Descritivas: As URIs seguem uma estrutura descritiva e semântica, o que facilita o entendimento e a navegação na API.
+
+## Uso do PEP-8
+
+O código segue as diretrizes de estilo de codificação definidas no PEP-8, que é o guia de estilo para o código Python. Isso garante consistência e legibilidade no código fonte, facilitando a manutenção e colaboração entre desenvolvedores.
